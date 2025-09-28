@@ -83,13 +83,13 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-primary flex-shrink-0" />
                 <span className="text-muted-foreground text-sm">
-                  +1 (555) 123-4567
+                  +1 (318) 948-4489
                 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-primary flex-shrink-0" />
                 <span className="text-muted-foreground text-sm">
-                  welcome@vexengineering.com
+                  vexengineering@gmail.com
                 </span>
               </div>
             </div>

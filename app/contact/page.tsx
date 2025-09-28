@@ -220,12 +220,12 @@ export default function Contact() {
     {
       icon: Phone,
       title: "Call Us",
-      details: ["+1 (555) 123-4567", "+1 (555) 123-4568"],
+      details: ["+1 (318) 948-4489"],
     },
     {
       icon: Mail,
       title: "Email Us",
-      details: ["welcome@vexengineering.com"],
+      details: ["vexengineering@gmail.com"],
     },
     {
       icon: Clock,
