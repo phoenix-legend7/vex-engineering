@@ -1,11 +1,16 @@
+"use client";
+
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import Logo from "public/logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -13,22 +18,27 @@ const Navigation = () => {
     { name: "Services", path: "/services" },
     { name: "Projects", path: "/projects" },
     { name: "Team", path: "/team" },
-    { name: "Contact", path: "/contact" },
   ];
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => pathname === path;
 
   return (
-    <nav className="bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 border-b border-border">
+    <nav className="bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 sticky top-0 z-50 border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-hero rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">VEX</span>
+          <Link href="/" className="flex items-center space-x-2">
+            <div className="size-12 flex items-center justify-center">
+              <Image
+                src={Logo}
+                alt="VexEngineering"
+                width={48}
+                height={48}
+                className="size-12"
+              />
             </div>
             <span className="font-inter font-bold text-xl text-foreground">
-              VEXEngineering
+              VexEngineering
             </span>
           </Link>
 
@@ -38,18 +48,17 @@ const Navigation = () => {
               {navItems.map((item) => (
                 <Link
                   key={item.name}
-                  to={item.path}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                    isActive(item.path)
+                  href={item.path}
+                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${isActive(item.path)
                       ? "text-primary bg-primary/10"
                       : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
-                  }`}
+                    }`}
                 >
                   {item.name}
                 </Link>
               ))}
               <Button variant="hero" size="sm" asChild>
-                <Link to="/contact">Get Quote</Link>
+                <Link href="/contact">Contact</Link>
               </Button>
             </div>
           </div>
@@ -74,12 +83,11 @@ const Navigation = () => {
               {navItems.map((item) => (
                 <Link
                   key={item.name}
-                  to={item.path}
-                  className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                    isActive(item.path)
+                  href={item.path}
+                  className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${isActive(item.path)
                       ? "text-primary bg-primary/10"
                       : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
-                  }`}
+                    }`}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
@@ -87,7 +95,7 @@ const Navigation = () => {
               ))}
               <div className="px-3 py-2">
                 <Button variant="hero" size="sm" asChild className="w-full">
-                  <Link to="/contact" onClick={() => setIsOpen(false)}>
+                  <Link href="/contact" onClick={() => setIsOpen(false)}>
                     Get Quote
                   </Link>
                 </Button>

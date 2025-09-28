@@ -1,5 +1,7 @@
-import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, Linkedin, Twitter } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { Phone, Mail } from "lucide-react";
+import Logo from "public/logo.png";
 
 const Footer = () => {
   return (
@@ -9,18 +11,24 @@ const Footer = () => {
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-hero rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">VEX</span>
+              <div className="size-12 rounded-lg flex items-center justify-center">
+                <Image
+                  src={Logo}
+                  alt="VexEngineering"
+                  width={48}
+                  height={48}
+                  className="size-12"
+                />
               </div>
               <span className="font-inter font-bold text-xl text-foreground">
-                VEXEngineering
+                VexEngineering
               </span>
             </div>
             <p className="text-muted-foreground max-w-md mb-4">
-              Professional civil engineering solutions for modern infrastructure. 
+              Professional civil engineering solutions for modern infrastructure.
               We deliver excellence in structural design, project management, and construction consulting.
             </p>
-            <div className="flex space-x-4">
+            {/* <div className="flex space-x-4">
               <a
                 href="#"
                 className="text-muted-foreground hover:text-primary transition-colors"
@@ -35,7 +43,7 @@ const Footer = () => {
               >
                 <Twitter className="h-5 w-5" />
               </a>
-            </div>
+            </div> */}
           </div>
 
           {/* Quick Links */}
@@ -51,7 +59,7 @@ const Footer = () => {
               ].map((link) => (
                 <Link
                   key={link.name}
-                  to={link.path}
+                  href={link.path}
                   className="block text-muted-foreground hover:text-primary transition-colors"
                 >
                   {link.name}
@@ -64,14 +72,14 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-foreground mb-4">Contact</h3>
             <div className="space-y-3">
-              <div className="flex items-start space-x-3">
+              {/* <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
                 <span className="text-muted-foreground text-sm">
                   123 Engineering Plaza<br />
                   Suite 400<br />
                   Tech City, TC 12345
                 </span>
-              </div>
+              </div> */}
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-primary flex-shrink-0" />
                 <span className="text-muted-foreground text-sm">
@@ -81,7 +89,7 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-primary flex-shrink-0" />
                 <span className="text-muted-foreground text-sm">
-                  info@vexengineering.com
+                  welcome@vexengineering.com
                 </span>
               </div>
             </div>
@@ -90,7 +98,7 @@ const Footer = () => {
 
         <div className="border-t border-border mt-8 pt-8 text-center">
           <p className="text-muted-foreground text-sm">
-            © 2024 VEXEngineering. All rights reserved.
+            © {new Date().getFullYear()} VexEngineering. All rights reserved.
           </p>
         </div>
       </div>

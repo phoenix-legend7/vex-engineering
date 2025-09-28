@@ -54,11 +54,34 @@ npm run dev
 
 This project is built with:
 
-- Vite
+- Next.js
 - TypeScript
 - React
 - shadcn-ui
 - Tailwind CSS
+
+## Telegram Integration Setup
+
+This project includes a contact form that sends messages to Telegram. To set this up:
+
+1. **Create a Telegram Bot:**
+   - Message @BotFather on Telegram
+   - Use `/newbot` command and follow the instructions
+   - Save the bot token you receive
+
+2. **Get your Chat ID:**
+   - Send a message to your bot
+   - Visit: `https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getUpdates`
+   - Find your chat ID in the response
+
+3. **Set Environment Variables:**
+   Create a `.env.local` file in the project root with:
+   ```
+   TELEGRAM_BOT_TOKEN=your_bot_token_here
+   TELEGRAM_CHAT_ID=your_chat_id_here
+   ```
+
+4. **Restart your development server** after adding the environment variables.
 
 ## How can I deploy this project?
 

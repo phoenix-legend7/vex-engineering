@@ -1,13 +1,18 @@
+"use client";
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ExternalLink, Calendar, MapPin } from "lucide-react";
+import { useState } from "react";
+import Image from "next/image";
 import bridgeImage from "@/assets/project-bridge.jpg";
 import buildingImage from "@/assets/project-building.jpg";
 import highwayImage from "@/assets/project-highway.jpg";
 
-const Projects = () => {
+export default function Projects() {
+  const [selectedCategory, setSelectedCategory] = useState("All");
   const projects = [
     {
       id: 1,
@@ -18,7 +23,10 @@ const Projects = () => {
       image: bridgeImage,
       description: "Complete reconstruction of a 2,400-foot steel and concrete bridge including seismic retrofitting and modern safety features.",
       tags: ["Bridge Design", "Seismic Engineering", "Steel Structures"],
-      client: "City of Tech City"
+      client: {
+        name: "City of Tech City",
+        link: "https://example.com",
+      }
     },
     {
       id: 2,
@@ -29,7 +37,10 @@ const Projects = () => {
       image: buildingImage,
       description: "25-story mixed-use complex featuring advanced structural systems and sustainable design elements.",
       tags: ["High-Rise", "Sustainable Design", "Concrete Structures"],
-      client: "TechCorp Industries"
+      client: {
+        name: "TechCorp Industries",
+        link: "https://example.com",
+      }
     },
     {
       id: 3,
@@ -40,7 +51,10 @@ const Projects = () => {
       image: highwayImage,
       description: "Multi-phase highway expansion project including new overpasses, retaining walls, and drainage systems.",
       tags: ["Highway Engineering", "Drainage Design", "Traffic Infrastructure"],
-      client: "State Department of Transportation"
+      client: {
+        name: "State Department of Transportation",
+        link: "https://example.com",
+      }
     },
     {
       id: 4,
@@ -51,7 +65,10 @@ const Projects = () => {
       image: buildingImage,
       description: "State-of-the-art research facility with specialized laboratory requirements and advanced HVAC systems.",
       tags: ["Laboratory Design", "Specialized Structures", "Research Facilities"],
-      client: "Tech City University"
+      client: {
+        name: "Tech City University",
+        link: "https://example.com",
+      }
     },
     {
       id: 5,
@@ -62,7 +79,10 @@ const Projects = () => {
       image: buildingImage,
       description: "35-story residential tower with underground parking and integrated retail spaces.",
       tags: ["Residential Design", "Underground Structures", "Mixed-Use"],
-      client: "Metro Development Group"
+      client: {
+        name: "Metro Development Group",
+        link: "https://example.com",
+      }
     },
     {
       id: 6,
@@ -73,11 +93,19 @@ const Projects = () => {
       image: highwayImage,
       description: "Comprehensive upgrade of municipal water treatment facilities including new filtration systems.",
       tags: ["Water Infrastructure", "Environmental Engineering", "Industrial Facilities"],
-      client: "Tech City Water Authority"
+      client: {
+        name: "Tech City Water Authority",
+        link: "https://example.com",
+      }
     }
   ];
 
   const categories = ["All", "Infrastructure", "Commercial", "Transportation", "Educational", "Residential"];
+
+  // Filter projects based on selected category
+  const filteredProjects = selectedCategory === "All" 
+    ? projects 
+    : projects.filter(project => project.category === selectedCategory);
 
   return (
     <div className="min-h-screen pt-16">
@@ -88,7 +116,7 @@ const Projects = () => {
             Our Projects
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in">
-            Showcasing our engineering excellence through successful projects across various sectors. 
+            Showcasing our engineering excellence through successful projects across various sectors.
             Each project represents our commitment to innovation, quality, and client satisfaction.
           </p>
         </div>
@@ -101,9 +129,10 @@ const Projects = () => {
             {categories.map((category, index) => (
               <Button
                 key={index}
-                variant={index === 0 ? "default" : "outline"}
+                variant={selectedCategory === category ? "default" : "outline"}
                 size="sm"
                 className="mb-2"
+                onClick={() => setSelectedCategory(category)}
               >
                 {category}
               </Button>
@@ -116,12 +145,14 @@ const Projects = () => {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
+            {filteredProjects.map((project, index) => (
               <Card key={project.id} className="group hover:shadow-hover transition-all duration-300 overflow-hidden animate-scale-in">
                 <div className="aspect-video overflow-hidden">
-                  <img
+                  <Image
                     src={project.image}
                     alt={project.title}
+                    width={400}
+                    height={225}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
@@ -130,20 +161,20 @@ const Projects = () => {
                     <Badge variant="secondary">{project.category}</Badge>
                     <span className="text-sm text-muted-foreground">{project.year}</span>
                   </div>
-                  
+
                   <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
-                  
+
                   <div className="flex items-center text-sm text-muted-foreground mb-3">
                     <MapPin className="h-4 w-4 mr-1" />
                     {project.location}
                   </div>
-                  
+
                   <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
                     {project.description}
                   </p>
-                  
+
                   <div className="flex flex-wrap gap-1 mb-4">
                     {project.tags.slice(0, 2).map((tag, tagIndex) => (
                       <Badge key={tagIndex} variant="outline" className="text-xs">
@@ -156,14 +187,16 @@ const Projects = () => {
                       </Badge>
                     )}
                   </div>
-                  
+
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-muted-foreground">
-                      {project.client}
+                      {project.client.name}
                     </span>
-                    <Button variant="ghost" size="sm">
-                      <ExternalLink className="h-4 w-4" />
-                    </Button>
+                    {!!project.client.link && (
+                      <Button onClick={() => window.open(project.client.link, "_blank")} variant="ghost" size="sm">
+                        <ExternalLink className="h-4 w-4" />
+                      </Button>
+                    )}
                   </div>
                 </CardContent>
               </Card>
@@ -211,15 +244,13 @@ const Projects = () => {
             Start Your Next Project
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Ready to see your engineering project come to life? Let's discuss how we can help you achieve your goals.
+            Ready to see your engineering project come to life? Let&apos;s discuss how we can help you achieve your goals.
           </p>
           <Button variant="secondary" size="lg" asChild>
-            <Link to="/contact">Get Project Quote</Link>
+            <Link href="/contact">Get Project Quote</Link>
           </Button>
         </div>
       </section>
     </div>
   );
-};
-
-export default Projects;
+}

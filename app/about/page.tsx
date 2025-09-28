@@ -1,9 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Target, Eye, Award, CheckCircle } from "lucide-react";
 
-const About = () => {
+export default function About() {
   const values = [
     {
       icon: Target,
@@ -26,7 +26,7 @@ const About = () => {
     "LEED Certified Engineers on staff",
     "ISO 9001:2015 Quality Management Certified",
     "Member of American Society of Civil Engineers (ASCE)",
-    "Licensed in 12+ states across the country",
+    "Licensed in 25+ states across the country",
     "Over 500 successful projects completed",
     "Award-winning structural designs",
   ];
@@ -38,11 +38,11 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 animate-fade-in">
-              About VEXEngineering
+              About VexEngineering
             </h1>
             <p className="text-xl text-muted-foreground animate-fade-in">
               Founded on the principles of engineering excellence, innovation, and client satisfaction, 
-              VEXEngineering has been at the forefront of civil engineering solutions for over 15 years.
+              VexEngineering has been at the forefront of civil engineering solutions for over 15 years.
             </p>
           </div>
         </div>
@@ -58,7 +58,7 @@ const About = () => {
               </h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  VEXEngineering was founded in 2009 by a team of passionate civil engineers who shared 
+                  VexEngineering was founded in 2009 by a team of passionate civil engineers who shared 
                   a vision of transforming the infrastructure landscape through innovative design and 
                   sustainable engineering practices.
                 </p>
@@ -68,7 +68,7 @@ const About = () => {
                   by our unwavering commitment to quality, safety, and client satisfaction.
                 </p>
                 <p>
-                  Today, we're proud to be recognized as industry leaders, combining traditional 
+                  Today, we&apos;re proud to be recognized as industry leaders, combining traditional 
                   engineering principles with modern technology to deliver exceptional results for 
                   our clients.
                 </p>
@@ -82,7 +82,7 @@ const About = () => {
                 standards of safety and environmental responsibility.
               </p>
               <Button variant="secondary" asChild>
-                <Link to="/contact">Partner With Us</Link>
+                <Link href="/contact">Partner With Us</Link>
               </Button>
             </div>
           </div>
@@ -134,7 +134,7 @@ const About = () => {
                 and professional standards in civil engineering.
               </p>
               <Button variant="default" asChild>
-                <Link to="/team">Meet Our Team</Link>
+                <Link href="/team">Meet Our Team</Link>
               </Button>
             </div>
             <div className="animate-scale-in">
@@ -155,23 +155,21 @@ const About = () => {
       <section className="py-20 bg-gradient-hero">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Let's Build Something Great Together
+            Let&apos;s Build Something Great Together
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
             Ready to start your next engineering project? Our team is here to help turn your vision into reality.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="secondary" size="lg" asChild>
-              <Link to="/contact">Start Your Project</Link>
+              <Link href="/contact">Start Your Project</Link>
             </Button>
             <Button variant="outline" size="lg" asChild className="bg-white/10 border-white text-white hover:bg-white hover:text-primary">
-              <Link to="/projects">View Our Work</Link>
+              <Link href="/projects">View Our Work</Link>
             </Button>
           </div>
         </div>
       </section>
     </div>
   );
-};
-
-export default About;
+}

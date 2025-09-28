@@ -1,10 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Link } from "react-router-dom";
 import { Linkedin, Mail, Award, GraduationCap } from "lucide-react";
 
-const Team = () => {
+export default function Team() {
   const leadership = [
     {
       name: "Dr. Sarah Mitchell",
@@ -13,7 +12,7 @@ const Team = () => {
       experience: "20+ years",
       specialization: "Seismic Design, High-Rise Structures",
       certifications: ["P.E.", "S.E.", "LEED AP"],
-      bio: "Dr. Mitchell founded VEXEngineering with a vision to transform infrastructure through innovative engineering solutions. Her expertise in seismic design has been instrumental in numerous landmark projects.",
+      bio: "Dr. Mitchell founded VexEngineering with a vision to transform infrastructure through innovative engineering solutions. Her expertise in seismic design has been instrumental in numerous landmark projects.",
       image: "/api/placeholder/300/300"
     },
     {
@@ -106,7 +105,7 @@ const Team = () => {
               Leadership Team
             </h2>
             <p className="text-xl text-muted-foreground">
-              Guiding VEXEngineering with decades of combined experience
+              Guiding VexEngineering with decades of combined experience
             </p>
           </div>
 
@@ -153,15 +152,6 @@ const Team = () => {
                   <p className="text-sm text-muted-foreground mb-6">
                     {member.bio}
                   </p>
-
-                  <div className="flex justify-center space-x-3">
-                    <Button variant="ghost" size="icon">
-                      <Linkedin className="h-4 w-4" />
-                    </Button>
-                    <Button variant="ghost" size="icon">
-                      <Mail className="h-4 w-4" />
-                    </Button>
-                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -253,29 +243,6 @@ const Team = () => {
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-hero">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Join Our Team
-          </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            We're always looking for talented engineers and professionals to join our growing team. 
-            Be part of building tomorrow's infrastructure.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="secondary" size="lg" asChild>
-              <Link to="/contact">View Open Positions</Link>
-            </Button>
-            <Button variant="outline" size="lg" asChild className="bg-white/10 border-white text-white hover:bg-white hover:text-primary">
-              <Link to="/contact">Submit Resume</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
     </div>
   );
-};
-
-export default Team;
+}

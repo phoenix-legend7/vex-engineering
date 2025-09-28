@@ -1,10 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Building2, Users, Award, ArrowRight } from "lucide-react";
+import Image from "next/image";
 import heroImage from "@/assets/hero-engineering.jpg";
 
-const Home = () => {
+export default function Home() {
   const stats = [
     { number: "500+", label: "Projects Completed" },
     { number: "15+", label: "Years Experience" },
@@ -34,11 +35,15 @@ const Home = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-accent/80" />
+        <div className="absolute inset-0">
+          <Image
+            src={heroImage}
+            alt="Engineering Excellence"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-primary/70" />
         </div>
         
         <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl">
@@ -49,14 +54,14 @@ const Home = () => {
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-2xl mx-auto animate-fade-in">
             Professional civil engineering solutions for modern infrastructure. 
-            Building tomorrow's world with precision and innovation.
+            Building tomorrow&apos;s world with precision and innovation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-scale-in">
             <Button variant="secondary" size="lg" asChild>
-              <Link to="/projects">View Our Work</Link>
+              <Link href="/projects">View Our Work</Link>
             </Button>
             <Button variant="outline" size="lg" asChild className="bg-white/10 border-white text-white hover:bg-white hover:text-primary">
-              <Link to="/contact">Get Started</Link>
+              <Link href="/contact">Get Started</Link>
             </Button>
           </div>
         </div>
@@ -112,7 +117,7 @@ const Home = () => {
 
           <div className="text-center mt-12">
             <Button variant="default" size="lg" asChild>
-              <Link to="/services">
+              <Link href="/services">
                 All Services
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
@@ -128,15 +133,13 @@ const Home = () => {
             Ready to Start Your Project?
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Let's discuss how we can bring your engineering vision to life with our expertise and innovation.
+            Let&apos;s discuss how we can bring your engineering vision to life with our expertise and innovation.
           </p>
           <Button variant="secondary" size="lg" asChild>
-            <Link to="/contact">Get Your Free Consultation</Link>
+            <Link href="/contact">Get Your Free Consultation</Link>
           </Button>
         </div>
       </section>
     </div>
   );
-};
-
-export default Home;
+}
