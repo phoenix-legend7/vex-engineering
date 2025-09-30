@@ -8,6 +8,9 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'VexEngineering - Professional Engineering Services',
   description: 'Leading engineering firm providing innovative solutions for infrastructure, construction, and development projects.',
+  icons: {
+    icon: "/favicon.png",
+  },
 }
 
 export default function RootLayout({
