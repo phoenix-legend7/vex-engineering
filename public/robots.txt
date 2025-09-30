@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://vexengineering.com
+
+# Sitemaps
+Sitemap: https://vexengineering.com/sitemap.xml
