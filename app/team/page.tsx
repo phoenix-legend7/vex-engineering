@@ -6,54 +6,54 @@ import { Linkedin, Mail, Award, GraduationCap } from "lucide-react";
 export default function Team() {
   const leadership = [
     {
-      name: "Dr. Sarah Mitchell",
+      name: "Dr. Michael Brian",
       title: "Principal Engineer & Founder",
       education: "Ph.D. Structural Engineering, MIT",
       experience: "20+ years",
       specialization: "Seismic Design, High-Rise Structures",
       certifications: ["P.E.", "S.E.", "LEED AP"],
-      bio: "Dr. Mitchell founded VexEngineering with a vision to transform infrastructure through innovative engineering solutions. Her expertise in seismic design has been instrumental in numerous landmark projects.",
-      image: "/api/placeholder/300/300"
+      bio: "Dr. Brian founded VexEngineering with a vision to transform infrastructure through innovative engineering solutions. His expertise in seismic design has been instrumental in numerous landmark projects.",
+      image: "/photos/Michael Brian.jpg"
     },
     {
-      name: "Michael Chen",
+      name: "Steven Clay",
       title: "Director of Operations",
       education: "M.S. Civil Engineering, Stanford",
       experience: "18+ years",
       specialization: "Project Management, Construction Administration",
       certifications: ["P.E.", "PMP", "OSHA 30"],
-      bio: "Michael oversees all operational aspects of our projects, ensuring timely delivery and exceptional quality standards. His leadership has been key to our consistent client satisfaction.",
-      image: "/api/placeholder/300/300"
+      bio: "Steven oversees all operational aspects of our projects, ensuring timely delivery and exceptional quality standards. His leadership has been key to our consistent client satisfaction.",
+      image: "/photos/Steven Clay.jpg"
     },
     {
-      name: "Dr. Emily Rodriguez",
+      name: "Dr. Cory Allison",
       title: "Senior Structural Engineer",
       education: "Ph.D. Earthquake Engineering, UC Berkeley",
       experience: "15+ years",
       specialization: "Bridge Design, Seismic Retrofitting",
       certifications: ["P.E.", "S.E.", "Bridge Inspector"],
-      bio: "Dr. Rodriguez specializes in complex bridge engineering and seismic retrofitting projects. Her innovative approaches have earned recognition from the engineering community.",
-      image: "/api/placeholder/300/300"
+      bio: "Dr. Allison specializes in complex bridge engineering and seismic retrofitting projects. His innovative approaches have earned recognition from the engineering community.",
+      image: "/photos/Cory Allison.jpg"
     }
   ];
 
   const engineers = [
     {
-      name: "James Thompson",
+      name: "Michael Dutton",
       title: "Senior Civil Engineer",
       specialization: "Transportation Infrastructure",
       certifications: ["P.E.", "PTOE"],
       experience: "12+ years"
     },
     {
-      name: "Lisa Park",
+      name: "Jun Quan",
       title: "Structural Engineer",
       specialization: "Commercial Buildings",
       certifications: ["P.E.", "LEED Green Associate"],
       experience: "8+ years"
     },
     {
-      name: "David Kumar",
+      name: "William Pontius",
       title: "Project Engineer",
       specialization: "Residential Structures",
       certifications: ["E.I.T.", "CAD Certified"],
@@ -61,8 +61,8 @@ export default function Team() {
     },
     {
       name: "Rachel Adams",
-      title: "Environmental Engineer",
-      specialization: "Sustainability & Compliance",
+      title: "Mechanical Engineer",
+      specialization: "HVAC & Plumbing",
       certifications: ["P.E.", "LEED AP", "CEM"],
       experience: "10+ years"
     },
@@ -114,9 +114,7 @@ export default function Team() {
               <Card key={index} className="group hover:shadow-hover transition-all duration-300 animate-scale-in">
                 <CardContent className="p-8 text-center">
                   <div className="w-32 h-32 bg-gradient-hero rounded-full mx-auto mb-6 flex items-center justify-center">
-                    <span className="text-white text-4xl font-bold">
-                      {member.name.split(' ').map(n => n[0]).join('')}
-                    </span>
+                    <img src={member.image} alt={member.name} className="w-full h-full object-cover rounded-full" />
                   </div>
                   
                   <h3 className="text-xl font-semibold text-foreground mb-1">
@@ -226,9 +224,9 @@ export default function Team() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { number: "50+", label: "Team Members" },
+              { number: "10+", label: "Team Members" },
               { number: "95%", label: "Licensed Engineers" },
-              { number: "200+", label: "Years Combined Experience" },
+              { number: "100+", label: "Years Combined Experience" },
               { number: "25+", label: "Professional Certifications" }
             ].map((stat, index) => (
               <div key={index} className="text-center animate-fade-in">

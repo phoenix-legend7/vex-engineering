@@ -9,7 +9,7 @@ export default function Home() {
   const stats = [
     { number: "500+", label: "Projects Completed" },
     { number: "15+", label: "Years Experience" },
-    { number: "50+", label: "Expert Engineers" },
+    { number: "10+", label: "Expert Engineers" },
     { number: "98%", label: "Client Satisfaction" },
   ];
 

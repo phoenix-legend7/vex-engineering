@@ -7,95 +7,99 @@ import Link from "next/link";
 import { ExternalLink, Calendar, MapPin } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
-import bridgeImage from "@/assets/project-bridge.jpg";
-import buildingImage from "@/assets/project-building.jpg";
-import highwayImage from "@/assets/project-highway.jpg";
+import projectImage1 from "@/assets/projects/1.jpg";
+import projectImage2 from "@/assets/projects/2.jpg";
+import projectImage3 from "@/assets/projects/3.jpg";
+import projectImage4 from "@/assets/projects/4.jpg";
+import projectImage5 from "@/assets/projects/5.jpg";
+import projectImage6 from "@/assets/projects/6.jpg";
 
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const projects = [
     {
       id: 1,
-      title: "Metropolitan Bridge Reconstruction",
+      title: "Civil Engineering - Drainage System",
       category: "Infrastructure",
-      location: "Tech City, TC",
+      location: "Raleigh, NC",
       year: "2023",
-      image: bridgeImage,
-      description: "Complete reconstruction of a 2,400-foot steel and concrete bridge including seismic retrofitting and modern safety features.",
-      tags: ["Bridge Design", "Seismic Engineering", "Steel Structures"],
+      image: projectImage1,
+      description: "Designed and installed an efficient drainage system to manage stormwater and prevent flooding. Included grading, pipe network design, and retention solutions to ensure long-term functionality.",
+      tags: ["Drainage Design", "Stormwater Management", "Sustainable Infrastructure"],
       client: {
-        name: "City of Tech City",
-        link: "https://example.com",
+        name: "City of Raleigh",
+        // link: "https://example.com",
       }
     },
     {
       id: 2,
-      title: "Corporate Headquarters Complex",
-      category: "Commercial",
-      location: "Business District, TC",
+      title: "Modern Residential Apartment",
+      category: "Residential",
+      location: "Las Vegas, NV",
       year: "2023",
-      image: buildingImage,
-      description: "25-story mixed-use complex featuring advanced structural systems and sustainable design elements.",
-      tags: ["High-Rise", "Sustainable Design", "Concrete Structures"],
+      image: projectImage2,
+      description: "Constructed a contemporary 3-floor apartment building with 12 residential units, featuring structural design, interior finishes, and integrated MEP systems. Emphasis on natural light, energy efficiency, and resident comfort.",
+      tags: ["Multi-Family Housing", "Energy Efficient Design", "Structural Engineering"],
       client: {
-        name: "TechCorp Industries",
-        link: "https://example.com",
+        name: "Private Developer",
+        // link: "https://example.com",
       }
     },
     {
       id: 3,
-      title: "Interstate Highway Expansion",
-      category: "Transportation",
-      location: "Regional Corridor",
+      title: "Luxury Residential House",
+      category: "Residential",
+      location: "Los Angeles, CA",
       year: "2022",
-      image: highwayImage,
-      description: "Multi-phase highway expansion project including new overpasses, retaining walls, and drainage systems.",
-      tags: ["Highway Engineering", "Drainage Design", "Traffic Infrastructure"],
+      image: projectImage3,
+      description: "Developed a high-end single-family home with modern architectural aesthetics, reinforced concrete framing, and sustainable landscaping. Combined style with functionality and structural integrity.",
+      tags: ["Luxury Homes", "Concrete Framing", "Sustainable Design"],
       client: {
-        name: "State Department of Transportation",
-        link: "https://example.com",
+        name: "Private Client",
+        // link: "https://example.com",
       }
     },
     {
       id: 4,
-      title: "University Research Facility",
-      category: "Educational",
-      location: "University Campus, TC",
+      title: "Integrated HVAC System",
+      category: "Mechanical Systems",
+      location: "Miami, FL",
       year: "2022",
-      image: buildingImage,
-      description: "State-of-the-art research facility with specialized laboratory requirements and advanced HVAC systems.",
-      tags: ["Laboratory Design", "Specialized Structures", "Research Facilities"],
+      image: projectImage4,
+      description: "Installed a state-of-the-art HVAC system in a mixed-use facility, covering ductwork, climate control optimization, and integration with building automation systems. Focused on energy efficiency and occupant comfort.",
+      tags: ["HVAC Engineering", "Building Automation", "Energy Efficiency"],
       client: {
-        name: "Tech City University",
-        link: "https://example.com",
+        name: "Commercial Facility Owner",
+        // link: "https://example.com",
       }
     },
     {
       id: 5,
-      title: "Residential Tower Development",
-      category: "Residential",
-      location: "Downtown District, TC",
-      year: "2021",
-      image: buildingImage,
-      description: "35-story residential tower with underground parking and integrated retail spaces.",
-      tags: ["Residential Design", "Underground Structures", "Mixed-Use"],
+      title: "Commercial Building Development",
+      category: "Commercial",
+      location: "Houston, TX",
+      year: "2023",
+      image: projectImage5,
+      description: "Constructed a modern commercial building suitable for offices and retail. Included structural design, MEP coordination, façade work, and interior finishing, ensuring durability and safety compliance.",
+      tags: ["Commercial Construction", "MEP Coordination", "Façade Design"],
       client: {
-        name: "Metro Development Group",
-        link: "https://example.com",
+        name: "Real Estate Developer",
+        // link: "https://example.com",
       }
     },
     {
       id: 6,
-      title: "Water Treatment Plant Upgrade",
-      category: "Infrastructure",
-      location: "Industrial Zone, TC",
-      year: "2021",
-      image: highwayImage,
-      description: "Comprehensive upgrade of municipal water treatment facilities including new filtration systems.",
-      tags: ["Water Infrastructure", "Environmental Engineering", "Industrial Facilities"],
+      title: "Full Permit Plan Set with Engineer’s Stamp",
+      category: "Engineering & Documentation",
+      location: "New York, NY",
+      year: "2023",
+      image: projectImage6,
+      description: "Developed complete permit-ready construction plans including architectural layouts, structural drawings, MEP schematics, and site plans. Reviewed and stamped by a licensed engineer to ensure compliance.",
+      tags: ["Permit Documentation", "Structural Engineering", "Code Compliance"],
       client: {
-        name: "Tech City Water Authority",
-        link: "https://example.com",
+        name: "Residential/Commercial Developer",
+        link: undefined,
+        // link: "https://example.com",
       }
     }
   ];
@@ -103,8 +107,8 @@ export default function Projects() {
   const categories = ["All", "Infrastructure", "Commercial", "Transportation", "Educational", "Residential"];
 
   // Filter projects based on selected category
-  const filteredProjects = selectedCategory === "All" 
-    ? projects 
+  const filteredProjects = selectedCategory === "All"
+    ? projects
     : projects.filter(project => project.category === selectedCategory);
 
   return (
@@ -189,9 +193,11 @@ export default function Projects() {
                   </div>
 
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">
-                      {project.client.name}
-                    </span>
+                    {!!project.client.name && (
+                      <span className="text-sm text-muted-foreground">
+                        {project.client.name}
+                      </span>
+                    )}
                     {!!project.client.link && (
                       <Button onClick={() => window.open(project.client.link, "_blank")} variant="ghost" size="sm">
                         <ExternalLink className="h-4 w-4" />
