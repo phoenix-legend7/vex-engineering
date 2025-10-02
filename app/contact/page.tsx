@@ -225,7 +225,7 @@ export default function Contact() {
     {
       icon: Mail,
       title: "Email Us",
-      details: ["team@vexengineering.com", "welcome@vexengineering.com"],
+      details: ["team@vexengineering.com", "info@vexengineering.com"],
     },
     {
       icon: Clock,

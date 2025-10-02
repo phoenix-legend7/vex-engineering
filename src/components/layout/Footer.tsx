@@ -92,6 +92,12 @@ const Footer = () => {
                   team@vexengineering.com
                 </span>
               </div>
+              <div className="flex items-center space-x-3">
+                <Mail className="h-5 w-5 text-primary flex-shrink-0" />
+                <span className="text-muted-foreground text-sm">
+                  info@vexengineering.com
+                </span>
+              </div>
             </div>
           </div>
         </div>

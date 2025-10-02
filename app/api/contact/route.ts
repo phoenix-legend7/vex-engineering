@@ -59,9 +59,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const projectType = projectTypes.find(t => t.value === body.projectType) || body.projectType;
-    const timeline = projectTimelines.find(t => t.value === body.timeline) || body.timeline;
-    const budget = projectBudgetRanges.find(r => r.value === body.budget) || body.budget;
+    const projectType = projectTypes.find(t => t.value === body.projectType)?.label || body.projectType;
+    const timeline = projectTimelines.find(t => t.value === body.timeline)?.label || body.timeline;
+    const budget = projectBudgetRanges.find(r => r.value === body.budget)?.label || body.budget;
 
     // Format the message for Telegram
     const telegramMessage = `
