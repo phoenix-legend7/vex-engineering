@@ -67,10 +67,10 @@ export default function Team() {
       experience: "10+ years"
     },
     {
-      name: "Mark Wilson",
-      title: "Geotechnical Engineer",
-      specialization: "Foundation Design",
-      certifications: ["P.E.", "G.E."],
+      name: "Robert Bush",
+      title: "Professional Engineer",
+      specialization: "Land Development / Foundation Design",
+      certifications: ["P.E.", "L.S."],
       experience: "14+ years"
     },
     {
