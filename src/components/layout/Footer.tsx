@@ -82,21 +82,21 @@ const Footer = () => {
               </div> */}
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-primary flex-shrink-0" />
-                <span className="text-muted-foreground text-sm">
+                <a className="text-muted-foreground text-sm" href="tel:+13189484489">
                   +1 (318) 948-4489
-                </span>
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-primary flex-shrink-0" />
-                <span className="text-muted-foreground text-sm">
+                <a className="text-muted-foreground text-sm" href="mailto:team@vexengineering.com">
                   team@vexengineering.com
-                </span>
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-primary flex-shrink-0" />
-                <span className="text-muted-foreground text-sm">
+                <a className="text-muted-foreground text-sm" href="mailto:info@vexengineering.com">
                   info@vexengineering.com
-                </span>
+                </a>
               </div>
             </div>
           </div>
