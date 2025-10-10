@@ -26,15 +26,15 @@ export default function Team() {
       image: "/photos/Steven Clay.jpg"
     },
     {
-      name: "Dr. Cory Allison",
-      title: "Senior Structural Engineer",
-      education: "Ph.D. Earthquake Engineering, UC Berkeley",
-      experience: "15+ years",
-      specialization: "Bridge Design, Seismic Retrofitting",
-      certifications: ["P.E.", "S.E.", "Bridge Inspector"],
-      bio: "Dr. Allison specializes in complex bridge engineering and seismic retrofitting projects. His innovative approaches have earned recognition from the engineering community.",
-      image: "/photos/Cory Allison.jpg"
-    }
+      name: "Richard Gordon",
+      title: "Principal Architect",
+      education: "M.Arch., Harvard Graduate School of Design",
+      experience: "18+ years",
+      specialization: "Sustainable Design, Mixed-Use Development",
+      certifications: ["AIA", "LEED AP BD+C", "NCARB"],
+      bio: "Sarah brings visionary architectural design expertise to complex projects, specializing in sustainable and mixed-use developments. Her innovative approach to design has earned multiple industry awards.",
+      image: "/photos/Richard Gordon.jpg"
+    },
   ];
 
   const engineers = [
@@ -114,7 +114,13 @@ export default function Team() {
               <Card key={index} className="group hover:shadow-hover transition-all duration-300 animate-scale-in">
                 <CardContent className="p-8 text-center">
                   <div className="w-32 h-32 bg-gradient-hero rounded-full mx-auto mb-6 flex items-center justify-center">
-                    <img src={member.image} alt={member.name} className="w-full h-full object-cover rounded-full" />
+                    {member.image ? (
+                      <img src={member.image} alt={member.name} className="w-full h-full object-cover rounded-full" />
+                    ) : (
+                      <span className="text-primary text-3xl font-bold">
+                        {member.name.split(' ').map(n => n[0]).join('')}
+                      </span>
+                    )}
                   </div>
                   
                   <h3 className="text-xl font-semibold text-foreground mb-1">
@@ -224,10 +230,10 @@ export default function Team() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { number: "10+", label: "Team Members" },
-              { number: "95%", label: "Licensed Engineers" },
-              { number: "100+", label: "Years Combined Experience" },
-              { number: "25+", label: "Professional Certifications" }
+              { number: "11+", label: "Team Members" },
+              { number: "95%", label: "Licensed Professionals" },
+              { number: "120+", label: "Years Combined Experience" },
+              { number: "28+", label: "Professional Certifications" }
             ].map((stat, index) => (
               <div key={index} className="text-center animate-fade-in">
                 <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
