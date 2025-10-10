@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Linkedin, Mail, Award, GraduationCap } from "lucide-react";
+import Image from "next/image";
 
 export default function Team() {
   const leadership = [
@@ -115,7 +116,13 @@ export default function Team() {
                 <CardContent className="p-8 text-center">
                   <div className="w-32 h-32 bg-gradient-hero rounded-full mx-auto mb-6 flex items-center justify-center">
                     {member.image ? (
-                      <img src={member.image} alt={member.name} className="w-full h-full object-cover rounded-full" />
+                      <Image 
+                        src={member.image} 
+                        alt={member.name} 
+                        width={128}
+                        height={128}
+                        className="w-full h-full object-cover rounded-full" 
+                      />
                     ) : (
                       <span className="text-primary text-3xl font-bold">
                         {member.name.split(' ').map(n => n[0]).join('')}
