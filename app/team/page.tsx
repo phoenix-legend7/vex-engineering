@@ -61,7 +61,7 @@ export default function Team() {
       experience: "5+ years"
     },
     {
-      name: "Rachel Adams",
+      name: "Michael Kampfe",
       title: "Mechanical Engineer",
       specialization: "HVAC & Plumbing",
       certifications: ["P.E.", "LEED AP", "CEM"],
