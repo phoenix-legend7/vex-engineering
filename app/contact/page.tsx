@@ -220,7 +220,7 @@ export default function Contact() {
     {
       icon: Phone,
       title: "Call Us",
-      details: [<a key="phone" href="tel:+13189484489">+1 (318) 948-4489</a>],
+      details: [<a key="phone" href="tel:+17579793380">+1 (757) 979-3380</a>],
     },
     {
       icon: Mail,
