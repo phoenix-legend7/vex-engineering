@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Linkedin, Mail, Award, GraduationCap } from "lucide-react";
+import { Linkedin, Mail, Award, GraduationCap, Phone } from "lucide-react";
 import Image from "next/image";
 
 export default function Team() {
@@ -13,18 +13,20 @@ export default function Team() {
       experience: "20+ years",
       specialization: "Seismic Design, High-Rise Structures",
       certifications: ["P.E.", "S.E.", "LEED AP"],
+      phone: "+1 (757) 979-3380",
       bio: "Dr. Brian founded VexEngineering with a vision to transform infrastructure through innovative engineering solutions. His expertise in seismic design has been instrumental in numerous landmark projects.",
       image: "/photos/Michael Brian.jpg"
     },
     {
-      name: "Steven Clay",
-      title: "Director of Operations",
-      education: "M.S. Civil Engineering, Stanford",
+      name: "Oleksandr Nalapko",
+      title: "Professional Architect",
+      education: "M.S. Architectural Engineering",
       experience: "18+ years",
       specialization: "Project Management, Construction Administration",
       certifications: ["P.E.", "PMP", "OSHA 30"],
-      bio: "Steven oversees all operational aspects of our projects, ensuring timely delivery and exceptional quality standards. His leadership has been key to our consistent client satisfaction.",
-      image: "/photos/Steven Clay.jpg"
+      phone: "+380 9981 88207",
+      bio: "Oleksandr oversees all operational aspects of our projects, ensuring timely delivery and exceptional quality standards. His leadership has been key to our consistent client satisfaction.",
+      image: "/photos/Oleksandr Nalapko.jpg"
     },
     {
       name: "Richard Gordon",
@@ -33,7 +35,8 @@ export default function Team() {
       experience: "18+ years",
       specialization: "Sustainable Design, Mixed-Use Development",
       certifications: ["AIA", "LEED AP BD+C", "NCARB"],
-      bio: "Sarah brings visionary architectural design expertise to complex projects, specializing in sustainable and mixed-use developments. Her innovative approach to design has earned multiple industry awards.",
+      phone: "+1 (415) 462-4262",
+      bio: "Richard brings visionary architectural design expertise to complex projects, specializing in sustainable and mixed-use developments. His innovative approach to design has earned multiple industry awards.",
       image: "/photos/Richard Gordon.jpg"
     },
   ];
@@ -145,6 +148,12 @@ export default function Team() {
                     <div className="flex items-center justify-center text-sm text-muted-foreground">
                       <Award className="h-4 w-4 mr-2" />
                       {member.experience}
+                    </div>
+                    <div className="flex items-center justify-center text-sm text-muted-foreground">
+                      <Phone className="h-4 w-4 mr-2" />
+                      <a href={`tel:${member.phone.replace(/[^\d+]/g, "")}`}>
+                        {member.phone}
+                      </a>
                     </div>
                   </div>
 
