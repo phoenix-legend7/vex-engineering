@@ -24,7 +24,7 @@ export default function Team() {
       experience: "18+ years",
       specialization: "Project Management, Construction Administration",
       certifications: ["P.E.", "PMP", "OSHA 30"],
-      phone: "+380 9981 88207",
+      phone: "",
       bio: "Oleksandr oversees all operational aspects of our projects, ensuring timely delivery and exceptional quality standards. His leadership has been key to our consistent client satisfaction.",
       image: "/photos/Oleksandr Nalapko.jpg"
     },
@@ -35,7 +35,7 @@ export default function Team() {
       experience: "18+ years",
       specialization: "Sustainable Design, Mixed-Use Development",
       certifications: ["AIA", "LEED AP BD+C", "NCARB"],
-      phone: "+1 (415) 462-4262",
+      phone: "",
       bio: "Richard brings visionary architectural design expertise to complex projects, specializing in sustainable and mixed-use developments. His innovative approach to design has earned multiple industry awards.",
       image: "/photos/Richard Gordon.jpg"
     },
